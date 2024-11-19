@@ -4,41 +4,50 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using GAME_10003_Game_Development_Foundations___2D_Game_Template__v1._0_1;
 
 namespace GAME_10003_Game_Development_Foundations___2D_Game_Template__v1._0_1
 {
-    public class player
+    public class player(float maxHealth, string name, int slot, float maxMana)
     {
-        private float currentHealth;
-        private float damage;
-        private Vector2 playerHealth;
-        private float healthRegen;
-        private float spellcost;
-        private float mana;
-        private float enemyHealth;
-        public player()
-        {
+        /*
+        public float currentHealth;
+        public float maxHealth;
+        public float damage;
+        public Vector2 playerHealth;
+        public float healthRegen;
+        public float spellcost;
+        public float mana;
+        public float enemyHealth;
+        */
 
-        }
-
-        private void TakingDamage(float damage)
+        //setup
+        float currentHealth = maxHealth;
+        float atkdmg = Random.Float(1, 5);
+        float currentMana = maxMana;
+        public void TakingDamage(float damage)
         {
             currentHealth -= damage;
         }
 
-        private void HealthReven()
+        public void HealthRegen(float healthRegen)
         {
-            healthRegen += currentHealth;
+            currentHealth += healthRegen;
         }
 
-        private void DealingDamage(float damage)
+        public void SpellCasting(float spellcost)
         {
-            enemyHealth -= damage;
+            currentMana -= spellcost;
+        }
+        public void DamageRoll()
+        {
+           atkdmg = Random.Float(1, 5);
         }
 
-        private void Spellcasting(float spellcost)
+        public float AttackDamage()
         {
-            mana -= spellcost;
+            return atkdmg;
         }
     }
+        
 }
