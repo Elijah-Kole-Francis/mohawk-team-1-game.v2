@@ -23,15 +23,23 @@ namespace GAME_10003_Game_Development_Foundations___2D_Game_Template__v1._0_1
         float currentHealth = maxHealth;
         float atkdmg = Random.Float(1, 5);
         float currentMana = maxMana;
+        float enemyX = (0);
+        float enemyY = (0);
+        public void SetPlayerPos(float posX, float posY)
+        {
+            enemyX = posX;
+            enemyY = posY;
+        }
+        public void blit()
+        {
+            Draw.FillColor = new(255, 0, 0, 50);
+            Draw.Rectangle(enemyX, enemyY, 50, 50);
+        }
         public void TakingDamage(float damage)
         {
             currentHealth -= damage;
         }
 
-        public void HealthRegen(float healthRegen)
-        {
-            currentHealth += healthRegen;
-        }
 
         public void SpellCasting(float spellcost)
         {
