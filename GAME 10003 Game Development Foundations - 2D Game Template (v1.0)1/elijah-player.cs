@@ -37,8 +37,34 @@ namespace GAME_10003_Game_Development_Foundations___2D_Game_Template__v1._0_1
         }
         public void blit()
         {
+            //head
             Draw.FillColor = new(0, 255, 0, 50);
-            Draw.Rectangle(playerX,playerY,50,50);
+            Draw.Circle(playerX, playerY, 35);
+
+            //crown
+            Draw.FillColor = Color.Yellow;
+            Draw.Rectangle(90, 200, 70, 10);
+            Draw.Ellipse(90, 200, 10, 10);
+
+            //body
+            Draw.FillColor = Color.DarkGray;
+            Draw.Capsule(125, 250, 125, 390, 15);
+
+            //arm
+            Draw.Capsule(125, 285, 210, 305, 5);
+
+            //legs
+            Draw.Capsule(125, 390, 70, 490, 10);
+            Draw.Capsule(125, 390, 200, 420, 10);
+            Draw.Capsule(200, 420, 200, 490, 10);
+
+            //Sword
+            Draw.FillColor = Color.LightGray;
+            Draw.Quad(190, 330, 230, 300, 240, 310, 200, 340);
+            Draw.Quad(220, 290, 230, 380, 260, 310, 250, 320);
+
+            Draw.FillColor= Color.DarkGray;
+            Draw.Capsule(230, 310, 330, 230, 5);
         }
         public string Name()
         {
