@@ -63,6 +63,7 @@ namespace GAME_10003_Game_Development_Foundations___2D_Game_Template__v1._0_1
             Draw.Quad(190, 330, 230, 300, 240, 310, 200, 340);
             Draw.Quad(220, 290, 230, 380, 260, 310, 250, 320);
 
+            //sword blade
             Draw.FillColor= Color.DarkGray;
             Draw.Capsule(230, 310, 330, 230, 5);
         }
